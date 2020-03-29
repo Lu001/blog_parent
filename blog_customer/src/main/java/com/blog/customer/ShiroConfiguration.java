@@ -1,9 +1,8 @@
-package com.blog.system;
+package com.blog.customer;
 
 
 import com.blog.common.shiro.realm.BlogRealm;
 import com.blog.common.shiro.session.CustomSessionManager;
-import com.blog.system.realm.UserRealm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -25,7 +24,7 @@ public class ShiroConfiguration {
     //1.创建realm
     @Bean
     public BlogRealm getRealm() {
-        return new UserRealm();
+        return new BlogRealm();
     }
 
     //2.创建安全管理器

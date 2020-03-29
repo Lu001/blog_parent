@@ -3,7 +3,6 @@ package com.blog.domain.essay;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -18,13 +17,12 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Type {
-
+    private static final long serialVersionUID = 4297464181093070302L;
     @Id
-    @GeneratedValue
-    private Long id;
-    @NotBlank(message = "分类名称不能为空")
+    private String id;
     private String name;
 
     @OneToMany(mappedBy = "type")
+    @Column(name = "type_id")
     private List<Blog> blogs = new ArrayList<>();
 }

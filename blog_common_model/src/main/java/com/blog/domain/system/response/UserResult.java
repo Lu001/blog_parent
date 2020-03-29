@@ -43,9 +43,9 @@ public class UserResult implements Serializable {
      */
     private Date createTime;
 
-    private String companyId;
+    private String consumerId;
 
-    private String companyName;
+    private String consumerName;
 
     /**
      * 部门ID
@@ -87,7 +87,6 @@ public class UserResult implements Serializable {
      */
     private Integer inServiceStatus;
 
-    private String departmentName;
 
     private List<String> roleIds = new ArrayList<>();
 

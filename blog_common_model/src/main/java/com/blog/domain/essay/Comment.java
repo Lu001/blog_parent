@@ -18,16 +18,30 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Comment {
-
+    private static final long serialVersionUID = 4297464181093070302L;
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
+    /**
+     * 昵称
+     */
     private String nickname;
+    /**
+     * 邮箱
+     */
     private String email;
+    /**
+     * 评论内容
+     */
     private String content;
+    /**
+     * 头像
+     */
     private String avatar;
-    @Temporal(TemporalType.TIMESTAMP)
+    /**
+     * 创建时间
+     */
     private Date createTime;
+
 
     @ManyToOne
     private Blog blog;

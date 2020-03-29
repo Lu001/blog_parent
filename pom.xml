@@ -12,6 +12,8 @@
         <module>blog_common_model</module>
         <module>blog_customer</module>
         <module>blog_system</module>
+        <module>blog_essay</module>
+        <module>blog_eureka</module>
     </modules>
     <packaging>pom</packaging>
     <name>blog_parent</name>
@@ -30,6 +32,18 @@
         <java.version>1.8</java.version>
         <fastjson.version>1.2.47</fastjson.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -74,6 +88,13 @@
             <artifactId>shiro-redis</artifactId>
             <version>3.0.0</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
     </dependencies>
 
     <repositories>

@@ -17,11 +17,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Tag {
-
+    private static final long serialVersionUID = 4297464181093070302L;
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
     private String name;
+
+
+
 
     @ManyToMany(mappedBy = "tags")
     private List<Blog> blogs = new ArrayList<>();
