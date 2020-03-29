@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by limi on 2017/10/14.
@@ -64,6 +62,10 @@ public  class Blog implements Serializable {
      * 是否推荐
      */
     private boolean recommend;
+    /**
+     * 描述信息
+     */
+    private String description;
 
     private Date createTime;
 
@@ -71,23 +73,24 @@ public  class Blog implements Serializable {
 
     @JsonIgnore
     @ManyToMany
-    @JoinTable(name="t_blog_tags",joinColumns={@JoinColumn(name="blog_id",referencedColumnName="id")},
+    @JoinTable(name="t_blog_tags",joinColumns={@JoinColumn(name="blogs_id",referencedColumnName="id")},
             inverseJoinColumns={@JoinColumn(name="tags_id",referencedColumnName="id")}
     )
-    private List<Tag> tags = new ArrayList<>();
+    private Set<Tag> tags = new HashSet<>();
 
 
     @ManyToOne
     private Type type;
 
-    @ManyToOne
-    private User user;
+   @ManyToOne
+   private User user;
 
-    @OneToMany(mappedBy = "blog")
-    private List<Comment> comments = new ArrayList<>();
+//    @OneToMany(mappedBy = "blog")
+//    private List<Comment> comments = new ArrayList<>();
 
 
-    @Transient
-    private String tagIds;
-    private String description;
+//    @Transient
+//    private String tagIds;
+
+
 }

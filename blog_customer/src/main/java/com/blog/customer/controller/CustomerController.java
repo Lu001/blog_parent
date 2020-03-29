@@ -50,6 +50,7 @@ public class CustomerController {
     }
 
     //根据id查询消费者
+
     @RequestMapping(value="/{id}",method = RequestMethod.GET)
     public Result findById(@PathVariable(value="id") String id) throws CommonException {
         //throw new CommonException(ResultCode.UNAUTHORISE);

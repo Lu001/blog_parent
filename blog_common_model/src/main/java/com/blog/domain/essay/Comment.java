@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,8 +18,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Comment {
-    private static final long serialVersionUID = 4297464181093070302L;
+public class Comment  implements Serializable {
+    private static final long serialVersionUID = -1002411490113957485L;
     @Id
     private String id;
     /**
@@ -43,14 +44,14 @@ public class Comment {
     private Date createTime;
 
 
-    @ManyToOne
-    private Blog blog;
-
-    @OneToMany(mappedBy = "parentComment")
-    private List<Comment> replyComments = new ArrayList<>();
-
-    @ManyToOne
-    private Comment parentComment;
+//    @ManyToOne
+//    private Blog blog;
+//
+//    @OneToMany(mappedBy = "parentComment")
+//    private List<Comment> replyComments = new ArrayList<>();
+//
+//    @ManyToOne
+//    private Comment parentComment;
 
     private boolean adminComment;
 }
